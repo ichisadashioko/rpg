@@ -10,5 +10,15 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
+  },
+  globals: {
+    'enchant': true,
+    'CHEST': true,
+    'POT': true,
+    'CAVE': true,
+    'mapData1': true,
+    'mapData2': true,
+    'foregroundData': true,
+    'collisionData': true
   }
 }

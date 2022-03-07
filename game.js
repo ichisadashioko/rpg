@@ -1,13 +1,13 @@
 enchant()
 
-const game = new Game(256, 256)
+const game = new enchant.Game(256, 256)
 game.fps = 15
 game.preload('tilesets.png', 'chara0.png')
 game.spriteWidth = 16
 game.spriteHeight = 16
 
-const map = new Map(game.spriteWidth, game.spriteHeight)
-const foregroundMap = new Map(game.spriteWidth, game.spriteHeight)
+const map = new enchant.Map(game.spriteWidth, game.spriteHeight)
+const foregroundMap = new enchant.Map(game.spriteWidth, game.spriteHeight)
 
 const setMap = function () {
   map.image = game.assets['tilesets.png']
@@ -17,12 +17,12 @@ const setMap = function () {
   foregroundMap.loadData(foregroundData)
 }
 
-const player = new Sprite(32, 32)
+const player = new enchant.Sprite(32, 32)
 
 const setPlayer = function () {
   player.x = 1 * 16 - 8
   player.y = 17 * 16 - 16
-  player.image = new Surface(96, 128)
+  player.image = new enchant.Surface(96, 128)
   player.image.draw(game.assets['chara0.png'], 0, 0, 96, 128, 0, 0, 96, 128)
 
   player.isMoving = false
@@ -69,7 +69,7 @@ const setPlayer = function () {
 }
 
 const setStage = function () {
-  const stage = new Group()
+  const stage = new enchant.Group()
   stage.addChild(map)
   stage.addChild(player)
   stage.addChild(foregroundMap)
