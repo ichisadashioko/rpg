@@ -3204,7 +3204,6 @@
       let x; let y = 0
       const labelWidth = this.width
       let charWidth, amount, line, text, c, buf, increase, length
-      let bufWidth
       if (this._splitText) {
         ctx.textBaseline = 'top'
         ctx.font = this.font
