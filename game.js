@@ -37,7 +37,7 @@ const setPlayer = function () {
         this.walk++ // 0, 1, 2, 0, 1, 2, etc.
         this.walk %= 3
       }
-      if ((this.vx && (this.x - 8) % 16 == 0) || (this.vy && this.y % 16 == 0)) {
+      if ((this.vx && (this.x - 8) % 16 === 0) || (this.vy && this.y % 16 === 0)) {
         this.isMoving = false
         this.walk = 1
       }
@@ -89,12 +89,12 @@ const setStage = function () {
     let y = player.y + 16
     x /= 16
     y /= 16
-    if (mapData2[y][x] == CAVE) {
-      if (y == 2 && x == 1) {
+    if (mapData2[y][x] === CAVE) {
+      if (y === 2 && x === 1) {
         player.moveTo(15 * 16 - 8, 13 * 16 - 16)
-      } else if (y == 13 && x == 15) {
+      } else if (y === 13 && x === 15) {
         player.moveTo(13 * 16 - 8, 6 * 16 - 16)
-      } else if (y == 6 && x == 13) {
+      } else if (y === 6 && x === 13) {
         player.moveTo(1 * 16 - 8, 2 * 16 - 16)
       }
       return
@@ -114,7 +114,7 @@ const setStage = function () {
       default:
         break
     }
-    if (mapData2[y][x] == CHEST || mapData2[y][x] == POT) {
+    if (mapData2[y][x] === CHEST || mapData2[y][x] === POT) {
       mapData2[y][x] = -1
       collisionData[y][x] = 0
       setMap()
